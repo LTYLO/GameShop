@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+    --main-color: #ff9f0d;
+    --text-color: #fff;
+    --other-color: #212121;
+    --second-color: #9e9e9e;
+    --bg-color: #222; /* Fondo negro menos oscuro */
+    --iframe-bg: #111; /* Fondo del contenedor del iframe */
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+    --btn-green: #28a745; /* Color verde para el botón */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 30px 14%;
+    transition: all 0.5s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.logo i {
+    vertical-align: middle;
+    margin-right: 8px;
+    color: var(--main-color);
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist li a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+}
+
+.navlist li a:hover, .navlist li a.active {
+    color: var(--main-color);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: var(--main-color);
+    border-radius: 3rem;
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+.nav-icons i {
+    vertical-align: middle;
+    font-size: 25px;
+    color: var(--bg-color);
+    margin-right: 9px;
+    margin-left: 5px;
+    transition: all 0.5s ease;
+}
+
+#menu-icon {
+    font-size: 32px;
+    color: var(--bg-color);
+    z-index: 100001;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-icons i:hover {
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+
+/* Home */
+.home {
+    padding: 100px 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - 100px); /* Ajuste de la altura de la sección home */
+    box-sizing: border-box;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.home-text h1 span {
+    color: var(--main-color);
+}
+
+/* Iframe */
+.iframe-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--iframe-bg);
+    padding: 0; /* Asegurarse de que no haya ningún relleno */
+    margin: 0; /* Asegurarse de que no haya ningún margen */
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Texto de bienvenida y botón */
+.text-container {
+    z-index: 1; /* Asegurar que esté por encima del iframe */
+}
+
+.text-container h1 {
+    font-size: var(--big-font);
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.btn.green-btn {
+    display: inline-block;
+    background: var(--btn-green);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: var(--p-font);
+    font-weight: 600;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.btn.green-btn:hover {
+    background: darkgreen;
+}
+.text-container {
+    margin-top: 5cm;
+    z-index: 1; /* Asegurar que esté por encima del iframe */
+}
+
+/* Estilos del carrito de compras y modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: black; /* Asegura que el texto dentro del modal sea negro */
+}
+
+.modal-content h2 {
+    color: black; /* Asegura que el texto del h2 sea negro */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cart_content ul {
+    list-style-type: none;
+    padding: 0;
+    color: black; /* Asegura que el texto de la lista sea negro */
+}
+
+#cart_content ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: black; /* Asegura que el texto de los elementos de la lista sea negro */
+}
+
+#cart_content button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#cart_content button:hover {
+    background-color: darkred;
+}
+
+.comprar-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--btn-green);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comprar-btn:hover {
+    background-color: darkgreen;
+}
+
+#cart_content ul {
+    list-style-type: none;
+    padding: 0;
+    color: black !important; /* Asegura que el texto de la lista sea negro */
+}
+
+#cart_content ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: black !important; /* Asegura que el texto de los elementos de la lista sea negro */
+}

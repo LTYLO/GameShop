@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="css/sign_in.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src='https://my.spline.design/softlydescends-72ab28a43f9025c774945d7cd25d3a90/' frameborder='0' width='100%' height='100%'></iframe>
+    </div>
+    <div class="content">
+        <form action="Registro_Usuario.php" method="POST">
+            <h2>Registro</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Nombre" required name="Nombre">
+                <i class="ri-account-circle-line"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Nombre Plataforma" required name="Alias">
+                <i class="ri-gamepad-line"></i>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" required name="Email">
+                <i class="ri-mail-line"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" required name="Contrasena">
+                <i class="ri-lock-password-line"></i>
+            </div>
+            <button type="submit" class="btn">Registrarse</button>
+            <div class="button">
+                <a href="#">
+                    <i class="ri-google-fill"></i>
+                     Google
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

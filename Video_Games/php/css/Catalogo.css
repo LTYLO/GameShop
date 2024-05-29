@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+    --main-color: #ff9f0d;
+    --text-color: #585353;
+    --other-color: #212121;
+    --second-color: #9e9e9e;
+    --bg-color: #222; /* Fondo negro menos oscuro */
+    --iframe-bg: #111; /* Fondo del contenedor del iframe */
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+    --btn-green: #28a745; /* Color verde para el botón */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 14%;
+    transition: all 0.5s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.logo i {
+    vertical-align: middle;
+    margin-right: 8px;
+    color: var(--main-color);
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist li a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 20px;
+    transition: all 0.5s ease;
+}
+
+.navlist li a:hover, .navlist li a.active {
+    color: var(--text-color);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: var(--main-color);
+    border-radius: 3rem;
+    box-shadow: #ff9f0d 0px 1px 25px;
+    margin-left: 10px;
+}
+
+.nav-icons a i {
+    vertical-align: middle;
+    font-size: 25px;
+    color: var(--bg-color);
+    margin-right: 9px;
+    margin-left: 5px;
+    transition: all 0.5s ease;
+}
+
+#menu-icon {
+    font-size: 32px;
+    color: var(--bg-color);
+    z-index: 100001;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-icons a i:hover {
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+}
+
+.container input {
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 0;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 20px;
+    font-size: 16px;
+    border: 1px solid #D50000;
+    transition: all .7s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.container .btn {
+    width: 40px;
+    height: 40px;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+    margin-left: -40px;
+}
+
+.container .btn i {
+    font-size: 20px; /* Tamaño del ícono de la lupa */
+    color: white;
+    transition: all .7s ease;
+}
+
+.container:hover input {
+    width: 250px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container:hover .btn {
+    margin-left: 10px;
+}
+
+.container:hover i {
+    transform: rotate(-360deg);
+}
+
+/* Home */
+.home {
+    padding: 100px 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - 100px); /* Ajuste de la altura de la sección home */
+    box-sizing: border-box;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.home-text h1 span {
+    color: var(--main-color);
+}
+
+/* Específico para el enlace de la Tienda */
+.navlist li:nth-child(2) a {
+    color: var(--main-color);
+}
+
+.contenido {
+    max-width: 1200px;
+    width: 100%;
+    margin: 80px auto; /* Aumentar el margen superior para evitar que se vea pegado al header */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px; /* Agregar relleno alrededor del contenido */
+    box-sizing: border-box; /* Incluir relleno en el ancho y alto del elemento */
+}
+
+.mostrador {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.mostrador .fila {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.mostrador .fila .item {
+    flex: 1 1 23%; /* Aproximadamente 1/4 del contenedor con márgenes */
+    max-width: 23%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px 1%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.mostrador .fila .item:hover {
+    background-color: #e6e6e6;
+}
+
+.mostrador .fila .item img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.mostrador .fila .item .descripcion {
+    color: #707070;
+    font-weight: bold;
+}
+
+.mostrador .fila .item .precio {
+    color: #f85151;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.seleccion {
+    transition: .5s ease;
+    opacity: 0;
+    width: 0%;
+    border: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cerrar {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info img {
+    display: block;
+    margin: 30px auto;
+    width: 80%;
+}
+
+.info h2 {
+    color: #707070;
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #707070;
+    margin-bottom: 10px;
+}
+
+.info .precio {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f85151;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.info .fila {
+    display: flex;
+    align-items: flex-end;
+}
+
+.info .fila label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.info .fila select {
+    width: 100px;
+    font-size: 18px;
+    padding: 6px;
+    margin-right: 30px;
+}
+
+.info .fila button {
+    height: 40px;
+    border: none;
+    padding: 0 10px;
+    color: #fff;
+    background-color: #f85151;
+}
+
+.alert {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+/* Otros estilos existentes */
+
+#cart {
+    position: fixed;
+    top: 20%;
+    right: 20%;
+    width: 50%;
+    height: 60%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#cart h2 {
+    text-align: center;
+}
+
+#cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#cart button {
+    background-color: red;
+    color: rgb(61, 58, 58);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#cart button:hover {
+    background-color: darkred;
+}
+
+
+#cart button:hover {
+    background-color: darkred;
+}
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cart_content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart_content ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#cart_content button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#cart_content button:hover {
+    background-color: darkred;
+}
+/* Agrega estos estilos al final de tu archivo CSS */
+.comprar-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--btn-green);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comprar-btn:hover {
+    background-color: darkgreen;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
